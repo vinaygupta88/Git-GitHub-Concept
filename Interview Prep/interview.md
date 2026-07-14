@@ -220,3 +220,69 @@ feature2:                    J---K
 
 50. What are the best practices for a clean GitHub workflow?
    - Answer: Use descriptive branch names, commit messages, pull requests, code reviews, branch protection, regular pulls, testing before merge, and avoid committing sensitive files.
+
+## Company-Level Example: Real GitHub Workflow
+
+### Scenario
+A company is building an e-commerce web application. The team has a `main` branch for production, a `develop` branch for integration, and feature branches for each developer.
+
+### Workflow
+
+```text
+             feature/login-page          feature/payment-api
+                     |                               |
+                     |                               |
+    developer1  ------ create branch ----------->
+    developer2  ------------------------------- create branch -->
+                     |                               |
+                     |--- commit, push to GitHub ---->| 
+                     |                               |
+                     |<------ open Pull Request ------|
+                     |                               |
+                     |--- code review + tests --------|
+                     |                               |
+                     |--- merge to develop -----------|
+
+main (production)      A---B---C---D---E---F
+                        \       \      /
+develop (staging)        G---H---I---J---K
+                            \       \
+feature/login-page            L---M---N
+
+feature/payment-api                    P---Q---R
+```
+
+### Step-by-step process
+
+1. A developer creates a feature branch such as `feature/login-page` from `develop`.
+2. The developer writes code, commits changes locally, and pushes the branch to GitHub.
+3. A pull request is opened for code review.
+4. Team members review the code, suggest changes, and approve it.
+5. Automated CI checks run on the pull request:
+   - install dependencies
+   - run unit tests
+   - run linting
+   - build the project
+6. Once approved, the branch is merged into `develop`.
+7. The `develop` branch is deployed to a staging environment for testing.
+8. After QA validation, a release branch or merge to `main` is created.
+9. A production deployment runs using GitHub Actions or another CI/CD pipeline.
+10. A release tag such as `v1.2.0` is created for version tracking.
+
+### Why this is important in a company
+
+- Developers work independently without breaking the main project.
+- Code review ensures quality and consistency.
+- CI checks catch bugs before deployment.
+- Staging environment verifies real-world functionality.
+- Production branch remains stable and release-ready.
+- GitHub provides traceability, accountability, and history for every change.
+
+## Quick Revision Tips
+
+- Practice basic Git commands daily: `git status`, `git add`, `git commit`, `git push`, `git pull`.
+- Understand how branches and pull requests work in a team project.
+- Learn how to resolve merge conflicts without losing work.
+- Be familiar with GitHub repository management, branching, and collaboration features.
+- Know the CI/CD flow: push → build → test → deploy.
+- Be comfortable explaining GitHub Actions, Issues, Projects, releases, and branch protection.
