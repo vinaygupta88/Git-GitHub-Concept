@@ -122,3 +122,42 @@ In GitHub, issues can be added to a project board so that each task is visible a
 - Board = the place where tickets/issues are organized and tracked visually
 
 This workflow helps teams stay organized and manage software development efficiently.
+---
+
+## Day 5
+
+<h2>Git Configuration and the Daily Workflow</h2>
+
+Git records snapshots of your project. A normal local workflow has three main areas:
+
+1. **Working tree**: the files you are editing.
+2. **Staging area (index)**: the changes selected for the next commit.
+3. **Repository**: the committed history stored by Git.
+
+Configure the author information Git records in new commits:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --list
+```
+
+Use `--local` instead of `--global` to configure a value for only the current repository. GitHub account authentication is separate from this commit identity.
+
+```bash
+git status
+git add README.md
+git add .
+git diff
+git diff --staged
+git commit -m "Add project documentation"
+git log --oneline
+```
+
+- `git diff` shows unstaged changes; `git diff --staged` shows staged changes.
+- Stage only the files that belong in the commit. Review the staged diff before committing.
+- A commit is a local snapshot; it is not uploaded to GitHub until it is pushed.
+
+**Practice:** Create or edit a small file, inspect the unstaged diff, stage it, inspect the staged diff, and create a descriptive commit.
+
+---
