@@ -161,3 +161,35 @@ git log --oneline
 **Practice:** Create or edit a small file, inspect the unstaged diff, stage it, inspect the staged diff, and create a descriptive commit.
 
 ---
+## Day 6
+
+<h2>Branches and Feature Branch Workflow</h2>
+
+A branch is a movable reference to a commit. Branches let work proceed independently without changing the main line of development until it is ready.
+
+```bash
+git branch
+git switch -c feature/add-readme-section
+git status
+# Make and commit a small change on this branch.
+git add README.md
+git commit -m "Add learning goals"
+git switch main
+git branch -d feature/add-readme-section
+```
+
+`git switch -c` creates and switches to a branch. The older equivalent is `git checkout -b`. To switch to an existing branch, use `git switch <branch-name>`. Delete a branch only after its work has been merged or is no longer needed.
+
+**Feature branch workflow:**
+
+1. Start from an up-to-date `main` branch.
+2. Create a focused branch for one task.
+3. Make small commits with clear messages.
+4. Push the branch and open a pull request.
+5. Review, merge, and remove the finished branch.
+
+Common strategies include feature branches, release branches, and short-lived branches that merge frequently. Teams should document their chosen branch names and protection rules.
+
+**Practice:** Create a feature branch, make two related commits, and compare its history with `main` using `git log --oneline --graph --all`.
+
+---
