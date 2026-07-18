@@ -232,3 +232,38 @@ git rebase --abort
 **Practice:** Make conflicting edits to the same line on two branches, merge the branches, resolve the conflict, and verify the final file.
 
 ---
+
+## Day 8
+
+<h2>Remotes, Clone, Fetch, Pull, and Push</h2>
+
+A **remote** is a named reference to another repository, commonly a GitHub repository. `origin` is the conventional name for the remote created by `git clone`.
+
+```bash
+git clone https://github.com/OWNER/REPOSITORY.git
+cd REPOSITORY
+git remote -v
+git fetch origin
+git pull origin main
+git push -u origin main
+```
+
+- `git fetch` downloads remote commits and references but does not merge them into the current branch.
+- `git pull` fetches and then integrates the upstream changes into the current branch (by merge or, when configured, rebase).
+- `git push` uploads local commits to a remote branch. The `-u` option sets the upstream for future pushes and pulls.
+- If a project uses a branch other than `main`, use that branch name in commands.
+
+For a new local project, connect it to an existing GitHub repository:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/OWNER/REPOSITORY.git
+git branch -M main
+git push -u origin main
+```
+
+**Practice:** Clone a repository, create a branch, commit a change, push the branch, and inspect the remote branch on GitHub.
+
+---
