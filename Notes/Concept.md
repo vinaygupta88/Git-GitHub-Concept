@@ -193,3 +193,42 @@ Common strategies include feature branches, release branches, and short-lived br
 **Practice:** Create a feature branch, make two related commits, and compare its history with `main` using `git log --oneline --graph --all`.
 
 ---
+
+## Day 7
+
+<h2>Merging, Rebasing, and Merge Conflicts</h2>
+
+Merging combines branch histories and can create a merge commit. Rebasing replays commits on top of another base to create a linear history.
+
+```bash
+# Merge a completed feature branch into main
+git switch main
+git merge feature/add-readme-section
+
+# Rebase a feature branch onto the latest main
+git switch feature/add-readme-section
+git fetch origin
+git rebase origin/main
+```
+
+- Merge is useful when the team wants to preserve the branch's history.
+- Rebase can make a feature branch's history easier to follow.
+- Do not rebase commits that other people already depend on unless the team has agreed how to handle the rewritten history.
+- A merge conflict means Git cannot safely choose between competing changes. Open each conflicted file, decide the correct final content, remove conflict markers, then test the result.
+
+```bash
+git status
+# Edit each conflicted file and remove <<<<<<<, =======, and >>>>>>> markers.
+git add <resolved-file>
+git merge --continue
+# For a rebase conflict, use:
+git rebase --continue
+
+# Cancel an in-progress operation if needed:
+git merge --abort
+git rebase --abort
+```
+
+**Practice:** Make conflicting edits to the same line on two branches, merge the branches, resolve the conflict, and verify the final file.
+
+---
