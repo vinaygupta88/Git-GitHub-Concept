@@ -267,3 +267,31 @@ git push -u origin main
 **Practice:** Clone a repository, create a branch, commit a change, push the branch, and inspect the remote branch on GitHub.
 
 ---
+
+## Day 9
+
+<h2>Pull Requests and Code Review</h2>
+
+A pull request (PR) proposes changes from one branch into another. It is a place to discuss, review, test, and approve changes before they are merged; it is not the same as the `git pull` command.
+
+**A useful PR includes:**
+
+- A clear title and summary of the change.
+- The reason for the change and any relevant issue link.
+- Test steps and results.
+- Screenshots or examples when they help reviewers.
+
+**Review workflow:**
+
+1. Push the feature branch to GitHub.
+2. Open a PR with the correct base and compare branches.
+3. Review the diff and automated checks.
+4. Leave specific, respectful comments or request changes.
+5. Update the branch, respond to feedback, and rerun checks.
+6. Merge using the method selected by the repository maintainers.
+
+Reviewers should focus on correctness, readability, tests, scope, and possible regressions. Authors should treat review as collaboration, not as a personal judgment.
+
+**Practice:** Open a PR for a small documentation change. Review the diff as if you were a teammate and add a concise description and verification steps.
+
+---
