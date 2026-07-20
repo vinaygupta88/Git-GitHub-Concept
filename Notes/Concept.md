@@ -295,3 +295,43 @@ Reviewers should focus on correctness, readability, tests, scope, and possible r
 **Practice:** Open a PR for a small documentation change. Review the diff as if you were a teammate and add a concise description and verification steps.
 
 ---
+
+## Day 10
+
+<h2>GitHub Collaboration and Open Source</h2>
+
+### Fork and upstream workflow
+
+A fork is your GitHub-hosted copy of another repository. It allows you to propose changes without write access to the original repository.
+
+```bash
+git clone https://github.com/YOUR-USERNAME/REPOSITORY.git
+cd REPOSITORY
+git remote add upstream https://github.com/ORIGINAL-OWNER/REPOSITORY.git
+git remote -v
+git fetch upstream
+git switch main
+git merge upstream/main
+git switch -c docs/fix-typo
+```
+
+Push your branch to your fork, then open a PR against the original repository. Read the contribution guide and code of conduct first, and make one focused contribution at a time.
+
+### Issues, labels, milestones, and team work
+
+- **Issues** describe bugs, feature requests, questions, and planned work. Include steps to reproduce a bug and the expected versus actual behavior.
+- **Labels** classify issues and PRs, for example `bug`, `documentation`, or `good first issue`.
+- **Milestones** group issues and PRs toward a release or project goal.
+- **Assignees** identify who is working on an item. Link related issues and PRs so progress is traceable.
+- **Tickets** are the general project-management term for trackable work; GitHub Issues often serve this purpose.
+- **Project boards** organize work into views or statuses such as Todo, In Progress, Review, and Done.
+
+For professional collaboration, keep changes scoped, communicate blockers early, and avoid pushing directly to a protected default branch.
+
+### GitHub profile, stars, and watches
+
+Keep a profile README, useful project descriptions, and pinned repositories up to date. A **star** bookmarks or signals interest in a repository; **watch** controls notifications about repository activity. Neither grants repository access.
+
+**Practice:** Find an appropriate open issue, read the repository contribution instructions, and draft a focused contribution plan before making changes.
+
+---
