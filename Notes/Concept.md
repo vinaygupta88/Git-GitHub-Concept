@@ -335,3 +335,43 @@ Keep a profile README, useful project descriptions, and pinned repositories up t
 **Practice:** Find an appropriate open issue, read the repository contribution instructions, and draft a focused contribution plan before making changes.
 
 ---
+
+## Day 11
+
+<h2>Stash and Safe Ways to Undo Changes</h2>
+
+Use a stash to temporarily set aside uncommitted work when you need to switch tasks:
+
+```bash
+git stash push -m "work in progress"
+git stash list
+git stash apply
+git stash pop
+```
+
+`apply` restores a stash but keeps it in the stash list. `pop` restores it and removes it if it applies successfully. Stashes are local and are not a substitute for commits or backups.
+
+Choose an undo command based on where the change is and whether the commit has been shared:
+
+```bash
+# Unstage a file but keep its working-tree changes
+git restore --staged <file>
+
+# Discard working-tree changes to a file (destructive)
+git restore <file>
+
+# Create a new commit that reverses an earlier commit; safe for shared history
+git revert <commit-hash>
+
+# Move the current branch back one commit but keep changes staged
+git reset --soft HEAD~1
+
+# Move back one commit and keep changes unstaged
+git reset HEAD~1
+```
+
+`git reset --hard <commit>` discards staged and working-tree changes and moves the branch. It can permanently remove uncommitted work; inspect `git status` and the target commit before using it. Prefer `git revert` for commits already pushed or shared with others.
+
+**Practice:** Make a temporary change, stash and restore it, then create a test commit and reverse it with `git revert`.
+
+---
