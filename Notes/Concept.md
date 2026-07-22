@@ -375,3 +375,63 @@ git reset HEAD~1
 **Practice:** Make a temporary change, stash and restore it, then create a test commit and reverse it with `git revert`.
 
 ---
+
+## Day 12
+
+<h2>Cherry-pick, Tags, Ignore Rules, Aliases, Hooks, and Submodules</h2>
+
+### Cherry-pick
+
+Apply one existing commit to the current branch without merging its entire branch:
+
+```bash
+git cherry-pick <commit-hash>
+```
+
+Use it selectively; repeated cherry-picking can make histories harder to understand. Resolve conflicts as prompted, then continue or abort with the relevant cherry-pick command.
+
+### Tags
+
+Tags mark important commits, commonly releases. Annotated tags store metadata and are generally preferred for releases.
+
+```bash
+git tag -a v1.0.0 -m "Release 1.0.0"
+git tag
+git push origin v1.0.0
+git push origin --tags
+```
+
+### Ignore files and aliases
+
+Add generated files, local settings, or build artifacts to `.gitignore`. Ignore rules do not remove a file that Git already tracks; untrack it separately if necessary.
+
+```gitignore
+# Example .gitignore entries
+*.log
+build/
+.env
+```
+
+Create shortcuts with Git aliases:
+
+```bash
+git config --global alias.st status
+git config --global alias.lg "log --oneline --graph --all"
+git st
+git lg
+```
+
+### Hooks and submodules
+
+Git hooks are scripts that run at lifecycle points such as before a commit or push. They can help enforce formatting or checks locally, but local hooks are not automatically shared or guaranteed to run in CI.
+
+A submodule is a reference to another Git repository pinned to a specific commit. It is useful when a dependency must remain a separate repository, but adds setup and update steps.
+
+```bash
+git submodule add https://github.com/OWNER/DEPENDENCY.git path/to/dependency
+git submodule update --init --recursive
+```
+
+**Practice:** Add an appropriate `.gitignore` entry, create an annotated test tag, and inspect the result with `git tag` and `git status`.
+
+---
