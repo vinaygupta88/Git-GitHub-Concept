@@ -435,3 +435,40 @@ git submodule update --init --recursive
 **Practice:** Add an appropriate `.gitignore` entry, create an annotated test tag, and inspect the result with `git tag` and `git status`.
 
 ---
+
+## Day 13
+
+<h2>GitHub Actions and CI/CD Basics</h2>
+
+GitHub Actions runs automated workflows in response to repository events. Workflows are YAML files stored in `.github/workflows/`.
+
+Example workflow that runs on pushes and pull requests:
+
+```yaml
+name: Basic CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Show repository files
+        run: ls
+```
+
+- A **workflow** contains one or more jobs.
+- A **job** runs on a runner and contains ordered steps.
+- A **step** can run a command or use an action.
+- **Continuous integration (CI)** automates checks such as tests and linting for proposed changes.
+- **Continuous delivery/deployment (CD)** automates packaging or release/deployment after required checks pass.
+
+Replace the example command with the project's actual test or build command. Review permissions and third-party actions before using them; grant workflows only the access they need.
+
+**Practice:** Add a workflow that runs an appropriate validation command on pull requests and confirm its check appears on a PR.
+
+---
