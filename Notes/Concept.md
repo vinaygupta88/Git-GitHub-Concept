@@ -472,3 +472,24 @@ Replace the example command with the project's actual test or build command. Rev
 **Practice:** Add a workflow that runs an appropriate validation command on pull requests and confirm its check appears on a PR.
 
 ---
+
+## Day 14
+
+<h2>GitHub Pages, Secrets, Projects, Discussions, and Releases</h2>
+
+- **GitHub Pages** publishes a static site from a repository or a configured build workflow. Choose the correct source and ensure only intended public content is published.
+- **Repository secrets** store sensitive values for workflows. Reference them through the Actions secrets context; never commit tokens, passwords, or `.env` files. Use the least privilege possible and rotate exposed credentials.
+- **GitHub Projects** provides configurable views for tracking issues and PRs across a project.
+- **GitHub Discussions** supports questions and community conversations that do not need to be tracked as actionable issues.
+- **GitHub Releases** presents a versioned snapshot, release notes, and optional downloadable assets. Releases are commonly associated with Git tags.
+
+Example release preparation:
+
+1. Finish and review changes on the release branch or default branch.
+2. Run required tests and checks.
+3. Create and push an annotated version tag.
+4. Create a GitHub Release for that tag with clear notes and assets if needed.
+
+**Practice:** Draft release notes for the test tag from Day 12, and identify which project information belongs in an issue, a discussion, a project board, or a release.
+
+---
