@@ -493,3 +493,20 @@ Example release preparation:
 **Practice:** Draft release notes for the test tag from Day 12, and identify which project information belongs in an issue, a discussion, a project board, or a release.
 
 ---
+
+## Day 15
+
+<h2>End-to-End Git and GitHub Project</h2>
+
+Use this capstone to practice the complete workflow without rewriting or force-pushing shared history.
+
+1. Create or choose a repository with a clear README and `.gitignore`.
+2. Check Git configuration, repository status, and current branch.
+3. Create a GitHub Issue describing one small improvement; add a suitable label and milestone if available.
+4. Create a short-lived feature branch from the latest `main`.
+5. Make a focused change, review `git diff`, stage only the intended files, and create a descriptive commit.
+6. Fetch remote updates and integrate them safely; resolve a conflict if one occurs.
+7. Push the branch and open a PR linked to the issue.
+8. Review the diff, respond to feedback, and ensure the CI workflow passes.
+9. Merge according to repository policy and update the local `main` branch.
+10. Add a version tag and prepare release notes. Optionally publish a GitHub Release or a Pages site if appropriate.
