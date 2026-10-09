@@ -82,3 +82,43 @@ An event that takes place when Git is Unable to automatically resolve difference
 <h2>Fork</h2>
 A fork is a new repository that shares code and visibility settings with tha original "upstream" repository.<br>
 Fork is a rough copy.
+
+---
+## Day 4
+<h2>Ticket, Issue & Board</h2>
+
+<h3>Ticket</h3>
+A ticket is a task or work item used to track a specific job, bug, feature, or improvement. In project management, every ticket usually has a unique ID and information such as title, description, priority, assignee, and status.
+
+- Helps to organize work
+- Makes it easier to track progress
+- Allows team members to know what is pending, in progress, or completed
+
+<h3>Issue</h3>
+An issue is a GitHub item used to track work, bugs, enhancements, or discussions related to a repository. It is similar to a ticket but commonly used in GitHub workflows.
+
+- Examples: bug report, feature request, documentation task
+- Can be assigned to a person
+- Can have labels, milestones, and comments
+- Can be linked with pull requests and commits
+
+<h3>Project Board</h3>
+A project board is a visual way to manage issues and tasks using columns such as To Do, In Progress, Review, and Done.
+
+- Helps teams see the workflow clearly
+- Makes task progress easy to monitor
+- Supports Kanban-style project management
+
+Example board:
+
+```
+To Do  ->  In Progress  ->  Review  ->  Done
+```
+
+In GitHub, issues can be added to a project board so that each task is visible and can be moved as work progresses.
+
+- Issue = a single task/bug/feature request
+- Ticket = the same idea in project management workflows
+- Board = the place where tickets/issues are organized and tracked visually
+
+This workflow helps teams stay organized and manage software development efficiently.
